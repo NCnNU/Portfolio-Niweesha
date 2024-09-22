@@ -1,19 +1,18 @@
-
 "use client";
-import { HoverEffect } from "../../../components/ui/card-hover-effect";
-import { Project } from "../../../components/ui/card-hover-effect"; // Adjust the path as necessary
-
+import { HoverEffect } from "../../../components/ui/card-hover-effect"; // Adjust the path as necessary
 
 export function CardHoverEffectDemo2() {
   return (
     <div className="max-w-5xl mx-auto px-8 py-12">
-      <h1 className="text-3xl font-bold text-center mb-8">My Technical Skills</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">
+        My Technical Skills
+      </h1>
       <HoverEffect items={projects} />
     </div>
   );
 }
 
-export const projects: Project[] = [
+export const projects = [
   {
     title: "Programming Languages",
     description:
@@ -26,8 +25,7 @@ export const projects: Project[] = [
   },
   {
     title: "Web Development",
-    description:
-      "Experienced in modern web development frameworks and tools.",
+    description: "Experienced in modern web development frameworks and tools.",
     link: "https://www.figma.com/files/team/1285524015496311718/recents-and-sharing/recently-viewed?fuid=1285524011570901144",
     leftSubtitle1: "🟠 Node.js",
     leftSubtitle2: "🌐 HTML",
@@ -46,6 +44,8 @@ export const projects: Project[] = [
   },
   {
     title: "Project Management Tools",
+    description: "",
+    link: "",
     leftSubtitle1: "📋 Jira",
     leftSubtitle2: "✅ ClickUp",
     rightSubtitle1: "",
@@ -53,6 +53,8 @@ export const projects: Project[] = [
   },
   {
     title: "Version Control",
+    description: "",
+    link: "",
     leftSubtitle1: "🌳 Git",
     leftSubtitle2: "",
     rightSubtitle1: "",
@@ -60,8 +62,7 @@ export const projects: Project[] = [
   },
   {
     title: "Other Tools",
-    description:
-      "Experienced in using design and editing tools.",
+    description: "Experienced in using design and editing tools.",
     link: "https://microsoft.com",
     leftSubtitle1: "🖼️ Photoshop",
     leftSubtitle2: "🎨 Figma",
