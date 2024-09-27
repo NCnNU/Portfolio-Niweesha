@@ -14,7 +14,9 @@ import {
 export default function CardHoverEffectDemo() {
   return (
     <div className="max-w-5xl mx-auto px-8 py-12">
-      <h1 className="text-3xl font-bold text-center mb-8">What I Offer</h1>
+      {/* Reduced margin below the title */}
+      <h1 className="text-3xl font-bold text-center mb-4">What I Offer</h1>
+      {/* Reduced padding in the card grid */}
       <CardHoverEffect items={projects} />
     </div>
   );
@@ -64,5 +66,3 @@ const projects = [
     link: "https://microsoft.com",
   },
 ];
-
-// Center the card content using Tailwind CSS
