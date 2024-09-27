@@ -1,9 +1,27 @@
 import { CardSpotlight } from "@/components/ui/card-spotlight";
-import { FaJava, FaPython, FaJs, FaReact, FaNodeJs, FaHtml5,  FaGit, FaGithub } from "react-icons/fa"; // Importing icons
-import { SiMysql, SiMongodb, SiJira, SiPostgresql, SiClickup, SiTypescript, SiFigma, SiAdobephotoshop } from "react-icons/si"; // Other relevant icons
+import {
+  FaJava,
+  FaPython,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaGit,
+  FaGithub,
+} from "react-icons/fa"; // Importing icons
+import {
+  SiMysql,
+  SiMongodb,
+  SiJira,
+  SiPostgresql,
+  SiClickup,
+  SiTypescript,
+  SiFigma,
+  SiAdobephotoshop,
+} from "react-icons/si"; // Other relevant icons
 import { Key } from "react";
 
-const CardSpotlightDemo = ()=> {
+const CardSpotlightDemo = () => {
   return (
     <div className="max-w-6xl mx-auto px-8 py-12">
       <h1 className="text-3xl font-bold text-center mb-12">My Skills</h1>
@@ -17,8 +35,8 @@ const CardSpotlightDemo = ()=> {
             { icon: <SiTypescript size={24} />, name: "TypeScript" },
           ]}
         />
-       
-       <SpotlightCard
+
+        <SpotlightCard
           title="Web Development"
           skills={[
             { icon: <FaNodeJs size={24} />, name: "Node.js" },
@@ -59,11 +77,19 @@ const CardSpotlightDemo = ()=> {
       </div>
     </div>
   );
-}
+};
 
-const SpotlightCard = ({ title, skills }: { title: string; skills: { icon: JSX.Element; name: string }[] }) => {
+const SpotlightCard = ({
+  title,
+  skills,
+}: {
+  title: string;
+  skills: { icon: JSX.Element; name: string }[];
+}) => {
   return (
-    <CardSpotlight className="h-70 w-full p-6"> {/* Reduced height */}
+    <CardSpotlight className="h-70 w-full p-6">
+      {" "}
+      {/* Reduced height */}
       <p className="text-xl font-bold relative z-20 mt-2 text-white text-center">
         {title}
       </p>
@@ -76,7 +102,13 @@ const SpotlightCard = ({ title, skills }: { title: string; skills: { icon: JSX.E
   );
 };
 
-const SkillRectangle = ({ icon, name }: { icon: JSX.Element; name: string }) => {
+const SkillRectangle = ({
+  icon,
+  name,
+}: {
+  icon: JSX.Element;
+  name: string;
+}) => {
   return (
     <div className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300 ease-in-out">
       <div className="mr-4 text-white">{icon}</div>
