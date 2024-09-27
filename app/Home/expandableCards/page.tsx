@@ -4,7 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
-export function ExpandableCardDemo() {
+const ExpandableCardDemo = () => {
   const [active, setActive] = useState<Card | boolean | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
@@ -194,9 +194,11 @@ export function ExpandableCardDemo() {
       </div>
     </>
   );
-}
+};
 
-export const CloseIcon = () => {
+export default ExpandableCardDemo;
+
+const CloseIcon = () => {
   return (
     <motion.svg
       initial={{ opacity: 0 }}

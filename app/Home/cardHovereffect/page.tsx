@@ -1,9 +1,10 @@
 "use client";
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, Key } from "react";
-import { HoverEffect as CardHoverEffect } from "../../../components/ui/card-hover-effect";
+import CardHoverEffect from "../../../components/ui/card-hover-effect";
+
 import { FaCode, FaPaintBrush, FaCogs, FaCamera, FaProjectDiagram, FaWindows } from "react-icons/fa"; // Importing icons
 
-export function CardHoverEffectDemo() {
+export default function CardHoverEffectDemo() {
   return (
     <div className="max-w-5xl mx-auto px-8 py-12">
       <h1 className="text-3xl font-bold text-center mb-8">What I Offer</h1>

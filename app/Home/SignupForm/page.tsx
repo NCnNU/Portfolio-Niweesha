@@ -4,7 +4,7 @@ import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import { cn } from "@/lib/utils";
 
-export function SignupFormDemo() {
+const SignupFormDemo =()=> {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -153,3 +153,5 @@ const LabelInputContainer = ({
     </div>
   );
 };
+
+export default SignupFormDemo;

@@ -9,7 +9,7 @@ import {
   IconCode,
 } from "@tabler/icons-react"; // Import the correct icons for each link
 
-export function FloatingDockDemo() {
+const FloatingDockDemo = () => {
   const links = [
     {
       title: "Home",
@@ -49,13 +49,15 @@ export function FloatingDockDemo() {
   ];
 
   return (
-    <div className="flex items-center justify-center w-full bg-black"> {/* Background color set to black */}
+    <div className="flex items-center justify-center w-full bg-black">
+      {" "}
+      {/* Background color set to black */}
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
       />
-
-      
     </div>
   );
-}
+};
+
+export default FloatingDockDemo;

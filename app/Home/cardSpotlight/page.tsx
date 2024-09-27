@@ -3,7 +3,7 @@ import { FaJava, FaPython, FaJs, FaReact, FaNodeJs, FaHtml5,  FaGit, FaGithub } 
 import { SiMysql, SiMongodb, SiJira, SiPostgresql, SiClickup, SiTypescript, SiFigma, SiAdobephotoshop } from "react-icons/si"; // Other relevant icons
 import { Key } from "react";
 
-export function CardSpotlightDemo() {
+const CardSpotlightDemo = ()=> {
   return (
     <div className="max-w-6xl mx-auto px-8 py-12">
       <h1 className="text-3xl font-bold text-center mb-12">My Skills</h1>
@@ -84,3 +84,5 @@ const SkillRectangle = ({ icon, name }: { icon: JSX.Element; name: string }) => 
     </div>
   );
 };
+
+export default CardSpotlightDemo;

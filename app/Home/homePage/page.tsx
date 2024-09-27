@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"; // Import useState and useEf
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 
-export function ShootingStarsAndStarsBackgroundDemo() {
+const ShootingStarsAndStarsBackgroundDemo=()=> {
   // State to manage the blinking text effect
   const [blinkingText, setBlinkingText] = useState("");
   const fullText = "IT Undergraduate"; // Full sentence to display letter by letter
@@ -41,7 +41,7 @@ export function ShootingStarsAndStarsBackgroundDemo() {
         </h2>
         <h2 className="relative flex flex-col md:flex-row z-10 text-3xl md:text-5xl md:leading-tight max-w-3xl mx-auto md:mx-0 text-center md:text-left tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white">
           {" "}
-          <span className="block"> It's Niweesha Wijesinghe</span>
+          <span className="block"> It&apos;s Niweesha Wijesinghe</span>
         </h2>
 
         {/* Blinking Text */}
@@ -78,3 +78,5 @@ export function ShootingStarsAndStarsBackgroundDemo() {
     </div>
   );
 }
+
+export default ShootingStarsAndStarsBackgroundDemo;

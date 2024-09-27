@@ -5,7 +5,7 @@ import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import Link from "next/link";
 
-export function AppleCardsCarouselDemo() {
+const AppleCardsCarouselDemo = ()=> {
   // Corrected 'key' to use 'index' instead of 'card.src'
   const cards = data.map((card, index) => (
     <Link href={card.link} key={index} target="_blank" rel="noopener noreferrer">
@@ -119,3 +119,5 @@ const data = [
     link: "https://medium.com/@uniweesha/what-is-streaming-f5a62a36e2a0",
   },
 ];
+
+export default AppleCardsCarouselDemo;

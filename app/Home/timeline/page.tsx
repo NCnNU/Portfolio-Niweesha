@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
 
-export function TimelineDemo() {
+const TimelineDemo = ()=> {
   // Data for timeline
   const data = [
     {
@@ -208,3 +208,5 @@ export function ImageSliderCard({ images }: { images: string[] }) {
     </div>
   );
 }
+
+export default TimelineDemo;

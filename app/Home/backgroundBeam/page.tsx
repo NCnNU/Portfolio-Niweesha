@@ -2,7 +2,7 @@
 import React from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
-export function BackgroundBeamsWithCollisionDemo() {
+const BackgroundBeamsWithCollisionDemo = () => {
   return (
     <BackgroundBeamsWithCollision>
       <div className="flex items-center justify-between w-full">
@@ -45,3 +45,5 @@ export function BackgroundBeamsWithCollisionDemo() {
     </BackgroundBeamsWithCollision>
   );
 }
+
+export default BackgroundBeamsWithCollisionDemo;

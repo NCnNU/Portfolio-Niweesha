@@ -15,7 +15,7 @@ interface HoverEffectProps {
   className?: string;
 }
 
-export const HoverEffect = ({ items, className }: HoverEffectProps) => {
+const CardHoverEffect = ({ items, className }: HoverEffectProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -111,3 +111,5 @@ export const CardDescription = ({ className, children }: CardDescriptionProps) =
     </p>
   );
 };
+
+export default CardHoverEffect;
