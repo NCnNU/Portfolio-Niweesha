@@ -1,8 +1,9 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"; // Ensure this utility is correctly imported
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+// Define the interface for the items
 interface Item {
   icon: JSX.Element;
   title2: string;
@@ -10,21 +11,18 @@ interface Item {
   link: string;
 }
 
+// Define props for the HoverEffect component
 interface HoverEffectProps {
   items: Item[];
   className?: string;
 }
 
-const CardHoverEffect = ({ items, className }: HoverEffectProps) => {
+// Export HoverEffect as the default export
+const HoverEffect = ({ items, className }: HoverEffectProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
-        className
-      )}
-    >
+    <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10", className)}>
       {items.map((item, idx) => (
         <Link
           href={item.link}
@@ -61,12 +59,8 @@ const CardHoverEffect = ({ items, className }: HoverEffectProps) => {
   );
 };
 
-interface CardProps {
-  className?: string;
-  children: React.ReactNode;
-}
-
-export const Card = ({ className, children }: CardProps) => {
+// Define the Card component
+const Card = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
     <div
       className={cn(
@@ -81,12 +75,8 @@ export const Card = ({ className, children }: CardProps) => {
   );
 };
 
-interface CardTitleProps {
-  className?: string;
-  children: React.ReactNode;
-}
-
-export const CardTitle = ({ className, children }: CardTitleProps) => {
+// Define the CardTitle component
+const CardTitle = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
     <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
       {children}
@@ -94,22 +84,14 @@ export const CardTitle = ({ className, children }: CardTitleProps) => {
   );
 };
 
-interface CardDescriptionProps {
-  className?: string;
-  children: React.ReactNode;
-}
-
-export const CardDescription = ({ className, children }: CardDescriptionProps) => {
+// Define the CardDescription component
+const CardDescription = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
-    <p
-      className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
-        className
-      )}
-    >
+    <p className={cn("mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm", className)}>
       {children}
     </p>
   );
 };
 
-export default CardHoverEffect;
+// Export HoverEffect as the default export
+export default HoverEffect;
