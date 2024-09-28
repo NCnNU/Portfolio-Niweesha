@@ -4,10 +4,15 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
-const ExpandableCardDemo = () => {
+interface ExpandableCardProps {
+  id: string;
+}
+
+const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
+  console.log(id);
   const [active, setActive] = useState<Card | boolean | null>(null);
   const ref = useRef<HTMLDivElement>(null);
-  const id = useId();
+  const ids = useId();
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -42,9 +47,12 @@ const ExpandableCardDemo = () => {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0 grid place-items-center z-[100]">
+          <div
+           
+            className="fixed inset-0 grid place-items-center z-[100]"
+          >
             <motion.button
-              key={`button-${active.title}-${id}`}
+              key={`button-${active.title}-${ids}`}
               layout
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -55,11 +63,11 @@ const ExpandableCardDemo = () => {
               <CloseIcon />
             </motion.button>
             <motion.div
-              layoutId={`card-${active.title}-${id}`}
+              layoutId={`card-${active.title}-${ids}`}
               ref={ref}
               className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden spotlight-effect"
             >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
+              <motion.div layoutId={`image-${active.title}-${ids}`}>
                 <Image
                   priority
                   width={200}
@@ -70,17 +78,17 @@ const ExpandableCardDemo = () => {
                 />
               </motion.div>
 
-              <div>
+              <div id={ids}>
                 <div className="flex justify-between items-start p-4">
                   <div>
                     <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
+                      layoutId={`title-${active.title}-${ids}`}
                       className="font-bold text-neutral-700 dark:text-neutral-200"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
-                      layoutId={`description-${active.description}-${id}`}
+                      layoutId={`description-${active.description}-${ids}`}
                       className="text-neutral-600 dark:text-neutral-400"
                     >
                       {active.description}
@@ -106,20 +114,20 @@ const ExpandableCardDemo = () => {
         ) : null}
       </AnimatePresence>
 
-      <div className="max-w-7xl mx-auto mt-8 flex justify-between items-start relative">
+      <div  id={id} className="max-w-7xl mx-auto mt-8 flex justify-between items-start relative">
         {/* Left section - Achievements */}
         <div className="flex-1">
           <h2 className="text-xl font-bold mb-4 text-center">Achievements</h2>
           <ul className="space-y-4">
             {achievements.map((card) => (
               <motion.div
-                layoutId={`card-${card.title}-${id}`}
-                key={`card-${card.title}-${id}`}
+                layoutId={`card-${card.title}-${ids}`}
+                key={`card-${card.title}-${ids}`}
                 onClick={() => setActive(card)}
                 className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer spotlight-effect"
               >
                 <div className="flex gap-4 flex-col md:flex-row">
-                  <motion.div layoutId={`image-${card.title}-${id}`}>
+                  <motion.div layoutId={`image-${card.title}-${ids}`}>
                     <Image
                       width={100}
                       height={100}
@@ -130,13 +138,13 @@ const ExpandableCardDemo = () => {
                   </motion.div>
                   <div>
                     <motion.h3
-                      layoutId={`title-${card.title}-${id}`}
+                      layoutId={`title-${card.title}-${ids}`}
                       className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
                     >
                       {card.title}
                     </motion.h3>
                     <motion.p
-                      layoutId={`description-${card.description}-${id}`}
+                      layoutId={`description-${card.description}-${ids}`}
                       className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
                     >
                       {card.description}
@@ -157,13 +165,13 @@ const ExpandableCardDemo = () => {
           <ul className="space-y-4">
             {certificates.map((card) => (
               <motion.div
-                layoutId={`card-${card.title}-${id}`}
-                key={`card-${card.title}-${id}`}
+                layoutId={`card-${card.title}-${ids}`}
+                key={`card-${card.title}-${ids}`}
                 onClick={() => setActive(card)}
                 className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer spotlight-effect"
               >
                 <div className="flex gap-4 flex-col md:flex-row">
-                  <motion.div layoutId={`image-${card.title}-${id}`}>
+                  <motion.div layoutId={`image-${card.title}-${ids}`}>
                     <Image
                       width={100}
                       height={100}
@@ -174,13 +182,13 @@ const ExpandableCardDemo = () => {
                   </motion.div>
                   <div>
                     <motion.h3
-                      layoutId={`title-${card.title}-${id}`}
+                      layoutId={`title-${card.title}-${ids}`}
                       className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
                     >
                       {card.title}
                     </motion.h3>
                     <motion.p
-                      layoutId={`description-${card.description}-${id}`}
+                      layoutId={`description-${card.description}-${ids}`}
                       className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
                     >
                       {card.description}
