@@ -4,7 +4,13 @@ import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import { cn } from "@/lib/utils";
 
-const SignupFormDemo =()=> {
+interface SignupFormProps {
+  id: string;
+}
+
+const SignupFormDemo: React.FC<
+SignupFormProps
+> = ({ id }) => { 
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -57,7 +63,7 @@ const SignupFormDemo =()=> {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-black">
+    <div id={id} className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-black">
       {/* Reduced the background size of the signup form container */}
       <div className="max-w-lg w-full p-2 md:p-4 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg">
         {/* Title in the middle of the page */}

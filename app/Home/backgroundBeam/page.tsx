@@ -2,10 +2,16 @@
 import React from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
-const BackgroundBeamsWithCollisionDemo = () => {
+interface BackgroundBeamsWithCollisionProps {
+  id: string;
+}
+
+const BackgroundBeamsWithCollisionDemo: React.FC<
+  BackgroundBeamsWithCollisionProps
+> = ({ id }) => {
   return (
     <BackgroundBeamsWithCollision>
-      <div className="flex items-center justify-between w-full">
+      <div id={id} className="flex items-center justify-between w-full">
         {/* Left side: Enlarged image without any background */}
         <div className="w-1/2 flex justify-center">
           <img
@@ -29,16 +35,17 @@ const BackgroundBeamsWithCollisionDemo = () => {
               </div>
             </div>
           </h2>
-          <br /><br />
+          <br />
+          <br />
           {/* Introduction text */}
           <p className="mt-4 text-lg text-left text-gray-600 dark:text-gray-300">
             As an IT undergraduate passionate about software development, I am
             dedicated to continuous learning and collaborative work. I excel in
-            teamwork, leveraging shared strengths to develop innovative solutions
-            that deliver meaningful user impact. Committed to both personal and
-            professional growth, I am always seeking new opportunities to refine
-            my skills and contribute positively to the dynamic world of
-            technology.
+            teamwork, leveraging shared strengths to develop innovative
+            solutions that deliver meaningful user impact. Committed to both
+            personal and professional growth, I am always seeking new
+            opportunities to refine my skills and contribute positively to the
+            dynamic world of technology.
           </p>
           <br />
           {/* Circular Resume Button */}
