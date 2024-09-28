@@ -8,9 +8,7 @@ interface SignupFormProps {
   id: string;
 }
 
-const SignupFormDemo: React.FC<
-SignupFormProps
-> = ({ id }) => { 
+const SignupFormDemo: React.FC<SignupFormProps> = ({ id }) => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -63,16 +61,16 @@ SignupFormProps
   };
 
   return (
-    <div id={id} className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-black">
+    <div id={id} className="flex items-center justify-center min-h-screen bg-black">
       {/* Reduced the background size of the signup form container */}
-      <div className="max-w-lg w-full p-2 md:p-4 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-lg">
+      <div className="max-w-lg w-full p-2 md:p-4 rounded-lg shadow-lg">
         {/* Title in the middle of the page */}
         <h1 className="font-bold text-3xl text-center mb-8 text-neutral-800 dark:text-neutral-200">
-          Say Hello!
+          Get in Touch
         </h1>
 
         {/* Signup form */}
-        <div className="rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+        <div className="rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-transparent">
           <form className="my-8" onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
               <LabelInputContainer>
@@ -135,7 +133,7 @@ SignupFormProps
       </div>
     </div>
   );
-}
+};
 
 const BottomGradient = () => {
   return (

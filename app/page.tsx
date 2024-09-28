@@ -19,7 +19,7 @@ export default function Home() {
       <AppleCardsCarouselDemo id="my-publications" />
       <ExpandableCardDemo id="achievements-certifications" />
       <SignupFormDemo id="contact-me" />
-      <FloatingDockDemo />
+      <FloatingDockDemo id="Links"/>
     </>
   );
 }

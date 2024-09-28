@@ -27,47 +27,56 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-5xl mx-auto z-50 bg-white shadow-lg rounded-lg", // Navbar styling and increased width
+        "fixed top-10 inset-x-0 max-w-5xl mx-auto z-50 bg-white bg-opacity-30 shadow-lg rounded-lg", // Changed background color to black and added transparency
         className
       )}
+    
     >
       <Menu setActive={setActive}>
         <MenuItem
           active={active}
           icon="fa-home"
-          onClick={() => scrollToSection("home")} // Link to 'Home' section
+          onClick={() => scrollToSection("home")} 
         />
         <MenuItem
           active={active}
           icon="fa-code"
-          onClick={() => scrollToSection("cardSpotlight")} // Link to 'My Skills' section
+          onClick={() => scrollToSection("cardSpotlight")} 
         />
         <MenuItem
           active={active}
           icon="fa-project-diagram"
-          onClick={() => scrollToSection("project")} // Link to 'Project' section
+          onClick={() => scrollToSection("project")} 
         />
         <MenuItem
           active={active}
           icon="fa-briefcase"
-          onClick={() => scrollToSection("what-i-offer")} // Link to 'What I Offer' section
+          onClick={() => scrollToSection("what-i-offer")} 
         />
         <MenuItem
           active={active}
           icon="fa-book"
-          onClick={() => scrollToSection("my-publications")} // Link to 'My Publications' section
+          onClick={() => scrollToSection("my-publications")} 
         />
         <MenuItem
           active={active}
           icon="fa-award"
-          onClick={() => scrollToSection("achievements-certifications")} // Link to 'Achievements & Certifications' section
+          onClick={() => scrollToSection("achievements-certifications")} 
         />
         <MenuItem
           active={active}
           icon="fa-envelope"
-          onClick={() => scrollToSection("contact-me")} // Link to 'Contact Me' section
+          onClick={() => scrollToSection("contact-me")} 
         />
+
+<MenuItem
+  active={active}
+  icon="fa-globe"  // Chain link icon
+  onClick={() => scrollToSection("Links")} 
+/>
+
       </Menu>
+
     </div>
   );
 }

@@ -38,7 +38,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-10 px-4 md:px-8 lg:px-10"> 
         {/* Reduced the top padding from 'py-20' to 'py-10' to decrease the gap */}
-        <h2 className="text-center max-w-7xl mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+        
+        <h2 className="top-2 w-full max-w-5xl mt-10 -mb-10 text-center max-w-7xl mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
           {/* Centered 'My Projects' by adding 'text-center' */}
           My Projects
         </h2>
