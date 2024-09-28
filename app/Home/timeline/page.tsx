@@ -4,7 +4,11 @@ import React, { useState, useEffect } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
 
-const TimelineDemo = ()=> {
+interface TimelineDemoProps {
+  id: string;
+}
+
+const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
   // Data for timeline
   const data = [
     {
@@ -175,11 +179,11 @@ const TimelineDemo = ()=> {
   ];
 
   return (
-    <div className="w-full">
+    <div id={id} className="w-full">
       <Timeline data={data} />
     </div>
   );
-}
+};
 
 // Image slider component
 export function ImageSliderCard({ images }: { images: string[] }) {

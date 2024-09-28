@@ -5,7 +5,13 @@ import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import Link from "next/link";
 
-const AppleCardsCarouselDemo = ()=> {
+interface AppleCardsCarouselDemoProps {
+  id: string;
+}
+
+const AppleCardsCarouselDemo: React.FC<
+AppleCardsCarouselDemoProps
+> = ({ id }) => {
   // Corrected 'key' to use 'index' instead of 'card.src'
   const cards = data.map((card, index) => (
     <Link href={card.link} key={index} target="_blank" rel="noopener noreferrer">
@@ -14,22 +20,14 @@ const AppleCardsCarouselDemo = ()=> {
   ));
 
   return (
-    <div className="w-full h-full py-20 flex flex-col items-center justify-center">
+    <div id={id} className="w-full h-full py-20 flex flex-col items-center justify-center">
       {/* Center the title horizontally and vertically */}
       <h2 className="text-center max-w-7xl mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         My Publications
       </h2>
-      <br/><br/>
-      {/* Fix the 'Go to My Profile' button */}
-      <Link href="https://medium.com/@uniweesha" target="_blank" rel="noopener noreferrer"
-        className="mt-4 inline-block bg-purple-800 text-white px-6 py-2 rounded-full text-lg hover:bg-gray-700 transition">
-        Go to My Profile
-      </Link>
       <br/>
-      {/* Horizontal line */}
-      <hr className="w-full max-w-7xl my-8 border-gray-300" />
-
-      {/* Carousel */}
+     
+    
       <Carousel items={cards} />
     </div>
   );
