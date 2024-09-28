@@ -4,7 +4,7 @@ import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import { cn } from "@/lib/utils";
 
-const SignupFormDemo =()=> {
+const SignupFormDemo = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -20,8 +20,16 @@ const SignupFormDemo =()=> {
     e.preventDefault();
     setIsSubmitting(true);
     setResponseMessage("");
+    console.log("Form data:", formData);
+    if(!formData.firstname || !formData.lastname || !formData.email || !formData.message) {
+      setResponseMessage("Please fill out all fields");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
+      console.log("Form data:", formData);
+
       // Send a POST request to the API route
       const response = await fetch("/api/sendEmail", {
         method: "POST",
@@ -41,6 +49,7 @@ const SignupFormDemo =()=> {
         );
       }
     } catch (error) {
+      console.log(error);
       console.error("Error submitting form:", error);
       setResponseMessage("An error occurred while sending the message.");
     } finally {
@@ -116,7 +125,8 @@ const SignupFormDemo =()=> {
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send &rarr;"}
+              {isSubmitting ? "Sending..." : "Send"} <span />
+              &rarr;
               <BottomGradient />
             </button>
 
@@ -129,7 +139,7 @@ const SignupFormDemo =()=> {
       </div>
     </div>
   );
-}
+};
 
 const BottomGradient = () => {
   return (
