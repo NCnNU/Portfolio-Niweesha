@@ -1,7 +1,9 @@
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+
+// Center the card content using Tailwind CSS
+import { cn } from "@/lib/utils";
 
 interface Item {
   icon: JSX.Element;
@@ -21,7 +23,8 @@ const CardHoverEffect = ({ items, className }: HoverEffectProps) => {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        // Reduced padding to reduce gap between title and cards
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-6",
         className
       )}
     >
@@ -88,7 +91,7 @@ interface CardTitleProps {
 
 export const CardTitle = ({ className, children }: CardTitleProps) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-2", className)}>
       {children}
     </h4>
   );
@@ -99,11 +102,14 @@ interface CardDescriptionProps {
   children: React.ReactNode;
 }
 
-export const CardDescription = ({ className, children }: CardDescriptionProps) => {
+export const CardDescription = ({
+  className,
+  children,
+}: CardDescriptionProps) => {
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-4 text-zinc-400 tracking-wide leading-relaxed text-sm",
         className
       )}
     >
