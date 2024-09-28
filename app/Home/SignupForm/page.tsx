@@ -4,6 +4,7 @@ import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import { cn } from "@/lib/utils";
 
+
 interface SignupFormProps {
   id: string;
 }
@@ -26,8 +27,16 @@ SignupFormProps
     e.preventDefault();
     setIsSubmitting(true);
     setResponseMessage("");
+    console.log("Form data:", formData);
+    if(!formData.firstname || !formData.lastname || !formData.email || !formData.message) {
+      setResponseMessage("Please fill out all fields");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
+      console.log("Form data:", formData);
+
       // Send a POST request to the API route
       const response = await fetch("/api/sendEmail", {
         method: "POST",
@@ -47,6 +56,7 @@ SignupFormProps
         );
       }
     } catch (error) {
+      console.log(error);
       console.error("Error submitting form:", error);
       setResponseMessage("An error occurred while sending the message.");
     } finally {
@@ -122,7 +132,8 @@ SignupFormProps
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send &rarr;"}
+              {isSubmitting ? "Sending..." : "Send"} <span />
+              &rarr;
               <BottomGradient />
             </button>
 
@@ -135,7 +146,7 @@ SignupFormProps
       </div>
     </div>
   );
-}
+};
 
 const BottomGradient = () => {
   return (
