@@ -14,7 +14,7 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
     {
       title: "2024",
       content: (
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 ">
           {/* Left Card */}
           <CardSpotlight className="h-80 w-80">
             {" "}

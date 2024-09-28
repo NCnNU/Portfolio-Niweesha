@@ -47,32 +47,11 @@ const DummyContent = () => {
 
 const data = [
   {
-    category: "INMO Air Glasses",
+    category: "Artificial Intelligence (AI)",
     title: "",
-    src: "https://preview.redd.it/inmo-air-2-augmented-reality-smart-glasses-gallery-v0-3v300ml5vjw91.jpg?width=1920&format=pjpg&auto=webp&s=1e7750e7922ef6321e7c09396aae2c4542ef07c0",
+    src: "https://cdn.sanity.io/images/tlr8oxjg/production/ada7e002d4675941802c42448a489b0b1b5c6854-1456x816.png?w=3840&q=100&fit=clip&auto=format",
     content: <DummyContent />,
-    link: "https://medium.com/@uniweesha/inmo-air-glasses-1e56d1269084",
-  },
-  {
-    category: "Prisma ORM",
-    title: "",
-    src: "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*VLLYS8MznQJXq-1_.jpg",
-    content: <DummyContent />,
-    link: "https://medium.com/@uniweesha/prisma-orm-d66f7ef59f4a",
-  },
-  {
-    category: "What is GitHub?",
-    title: "",
-    src: "https://www.bleepstatic.com/content/hl-images/2022/04/08/GitHub__headpic.jpg",
-    content: <DummyContent />,
-    link: "https://medium.com/@uniweesha/what-is-github-dc0b4ee16620",
-  },
-  {
-    category: "What is Figma design?",
-    title: "",
-    src: "https://www.bootstrapdash.com/blog/wp-content/uploads/2023/02/figma-design-scaled-1.jpg",
-    content: <DummyContent />,
-    link: "https://medium.com/@uniweesha/what-is-figma-design-38ce1d7cd0dd",
+    link: "https://medium.com/@uniweesha/artificial-intelligence-ai-a629e0767ea5",
   },
   {
     category: "What is an API?",
@@ -81,6 +60,38 @@ const data = [
     content: <DummyContent />,
     link: "https://medium.com/@uniweesha/what-is-an-api-02e54e4eeaa1",
   },
+  
+  {
+    category: "What is GitHub?",
+    title: "",
+    src: "https://www.bleepstatic.com/content/hl-images/2022/04/08/GitHub__headpic.jpg",
+    content: <DummyContent />,
+    link: "https://medium.com/@uniweesha/what-is-github-dc0b4ee16620",
+  },
+  {
+    category: "Inside Streaming Technology",
+    title: "",
+    src: "https://info.6connex.com/hubfs/6_Blog/2022/10-OCT_BLOG_16x9_Live-Streaming_Blank.jpg",
+    content: <DummyContent />,
+    link: "https://medium.com/@uniweesha/what-is-streaming-f5a62a36e2a0",
+  },
+ 
+  {
+    category: "NETFLIX",
+    title: "",
+    src: "https://global.ariseplay.com/amg/www.arise.tv/uploads/2024/07/Netflix.jpg",
+    content: <DummyContent />,
+    link: "https://medium.com/@uniweesha/netflix-2ffbd4d4247e",
+  },
+  
+  {
+    category: "What is Figma design?",
+    title: "",
+    src: "https://www.bootstrapdash.com/blog/wp-content/uploads/2023/02/figma-design-scaled-1.jpg",
+    content: <DummyContent />,
+    link: "https://medium.com/@uniweesha/what-is-figma-design-38ce1d7cd0dd",
+  },
+ 
   {
     category: "What is IoT?",
     title: "",
@@ -95,26 +106,15 @@ const data = [
     content: <DummyContent />,
     link: "https://medium.com/@uniweesha/what-is-an-ant-design-f5395974cda0",
   },
+ 
+  
+ 
   {
-    category: "Artificial Intelligence (AI)",
+    category: "INMO Air Glasses",
     title: "",
-    src: "https://cdn.sanity.io/images/tlr8oxjg/production/ada7e002d4675941802c42448a489b0b1b5c6854-1456x816.png?w=3840&q=100&fit=clip&auto=format",
+    src: "https://preview.redd.it/inmo-air-2-augmented-reality-smart-glasses-gallery-v0-3v300ml5vjw91.jpg?width=1920&format=pjpg&auto=webp&s=1e7750e7922ef6321e7c09396aae2c4542ef07c0",
     content: <DummyContent />,
-    link: "https://medium.com/@uniweesha/artificial-intelligence-ai-a629e0767ea5",
-  },
-  {
-    category: "NETFLIX",
-    title: "",
-    src: "https://global.ariseplay.com/amg/www.arise.tv/uploads/2024/07/Netflix.jpg",
-    content: <DummyContent />,
-    link: "https://medium.com/@uniweesha/netflix-2ffbd4d4247e",
-  },
-  {
-    category: "Inside Streaming Technology",
-    title: "",
-    src: "https://info.6connex.com/hubfs/6_Blog/2022/10-OCT_BLOG_16x9_Live-Streaming_Blank.jpg",
-    content: <DummyContent />,
-    link: "https://medium.com/@uniweesha/what-is-streaming-f5a62a36e2a0",
+    link: "https://medium.com/@uniweesha/inmo-air-glasses-1e56d1269084",
   },
 ];
 

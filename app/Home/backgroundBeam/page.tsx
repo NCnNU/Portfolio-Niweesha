@@ -51,7 +51,7 @@ const BackgroundBeamsWithCollisionDemo: React.FC<
           {/* Circular Resume Button */}
           <div className="mt-6 flex justify-start">
             <a
-              href="/pdf/Niweesha_Wijesinghe_CV.pdf" // Path to your CV PDF file
+              href="/pdf/Niweesha Wijesinghe.pdf" // Path to your CV PDF file
               download="Niweesha_Wijesinghe_CV.pdf" // Download attribute with filename
               className="inline-block p-4 text-white font-medium text-sm leading-tight rounded-full shadow-md transition duration-150 ease-in-out
                          bg-gradient-to-r from-purple-1000 via-violet-800 to-pink-800
