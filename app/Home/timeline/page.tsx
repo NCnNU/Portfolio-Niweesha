@@ -14,14 +14,10 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
     {
       title: "2024",
       content: (
-        <div className="flex space-x-4 ">
+        <div className="flex flex-col space-y-4">
           {/* Left Card */}
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Reduced height and width */}
+          <CardSpotlight className="h-80 w-full">
             <p className="text-lg font-bold relative z-20 mt-2 text-white">
-              {" "}
-              {/* Decreased font size */}
               <a
                 href="https://sportzi.live/"
                 target="_blank"
@@ -31,24 +27,18 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
               </a>
             </p>
             <div className="text-neutral-200 mt-4 relative z-20 text-sm">
-              {" "}
-              {/* Decreased text size */}
               SportZi is an innovative web application that connects athletes,
               coaches, and sports facilities. It offers features like seamless
               booking management, real-time updates, and more.
             </div>
             <p className="text-neutral-300 mt-4 relative z-20 text-xs">
-              {" "}
-              {/* Smaller description */}
               As a Full Stack Developer, I worked with React, Node.js,
               Express.js, and MySQL for this project.
             </p>
           </CardSpotlight>
 
           {/* Right Card with Image Slider */}
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Same size adjustment for the image card */}
+          <CardSpotlight className="h-80 w-full">
             <ImageSliderCard
               images={[
                 "/image/9.jpeg",
@@ -64,10 +54,8 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
     {
       title: "2024",
       content: (
-        <div className="flex space-x-4">
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Consistent size change */}
+        <div className="flex flex-col space-y-4">
+          <CardSpotlight className="h-80 w-full">
             <p className="text-lg font-bold relative z-20 mt-2 text-white">
               <a
                 href="https://github.com/NCnNU/SweetCakes"
@@ -88,9 +76,7 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
             </p>
           </CardSpotlight>
 
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Image card size adjustment */}
+          <CardSpotlight className="h-80 w-full">
             <ImageSliderCard
               images={[
                 "/image/16.png",
@@ -106,10 +92,8 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
     {
       title: "2023",
       content: (
-        <div className="flex space-x-4">
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Reduced size */}
+        <div className="flex flex-col space-y-4">
+          <CardSpotlight className="h-80 w-full">
             <p className="text-lg font-bold relative z-20 mt-2 text-white">
               PetCareTaker - Pet Feeding & Enrichment System
             </p>
@@ -124,15 +108,11 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
             </p>
           </CardSpotlight>
 
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Adjust image card size */}
+          <CardSpotlight className="h-80 w-full">
             <ImageSliderCard
               images={[
                 "/image/5.jpeg",
                 "/image/6.jpeg",
-                "/image/7.jpeg",
-                "/image/8.jpeg",
               ]}
             />
           </CardSpotlight>
@@ -142,10 +122,8 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
     {
       title: "2022",
       content: (
-        <div className="flex space-x-4">
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Reduced size */}
+        <div className="flex flex-col space-y-4">
+          <CardSpotlight className="h-80 w-full">
             <p className="text-lg font-bold relative z-20 mt-2 text-white">
               Finance - Banking Website
             </p>
@@ -161,9 +139,7 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
             </p>
           </CardSpotlight>
 
-          <CardSpotlight className="h-80 w-80">
-            {" "}
-            {/* Adjust image card size */}
+          <CardSpotlight className="h-80 w-full">
             <ImageSliderCard
               images={[
                 "/image/1.png",

@@ -1,9 +1,9 @@
+// components/ui/floating-dock.tsx
+"use client"; // Ensure this directive is present to mark the file as a client component
 import { cn } from "@/lib/utils";
-import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
-  AnimatePresence,
-  MotionValue,
   motion,
+  MotionValue,
   useMotionValue,
   useSpring,
   useTransform,
@@ -35,51 +35,21 @@ const FloatingDockMobile = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
-  const [open, setOpen] = useState(false);
   return (
-    <div className={cn("relative block md:hidden", className)}>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            layoutId="nav"
-            className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 bg-black" // Changed space between icons to black
-          >
-            {items.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
-                }}
-                transition={{ delay: (items.length - 1 - idx) * 0.05 }}
-              >
-                <Link
-                  href={item.href}
-                  key={item.title}
-                  className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
-                >
-                  <div className="h-4 w-4">{item.icon}</div>
-                </Link>
-              </motion.div>
-            ))}
+    <motion.div
+      className={cn(
+        "fixed bottom-4 left-0 right-0 flex justify-center items-center gap-4 p-2 bg-black", // Center the icons at the bottom in mobile
+        className
+      )}
+    >
+      {items.map((item) => (
+        <Link href={item.href} key={item.title}>
+          <motion.div className="h-12 w-12 flex items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900">
+            {item.icon}
           </motion.div>
-        )}
-      </AnimatePresence>
-      <button
-        onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
-      >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
-      </button>
-    </div>
+        </Link>
+      ))}
+    </motion.div>
   );
 };
 
@@ -96,17 +66,12 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-8 items-end rounded-2xl bg-black px-4 pb-3", // Set gap between icons and background color to black
+        "hidden md:flex mx-auto h-16 gap-8 items-end rounded-2xl bg-black px-4 pb-3",
         className
       )}
     >
-      {items.map((item, index) => (
-        <IconContainer
-          mouseX={mouseX}
-          key={item.title}
-          {...item}
-          isMediumIcon={index === 2} // Check if it's the Medium icon
-        />
+      {items.map((item) => (
+        <IconContainer mouseX={mouseX} key={item.title} {...item} />
       ))}
     </motion.div>
   );
@@ -114,26 +79,22 @@ const FloatingDockDesktop = ({
 
 function IconContainer({
   mouseX,
-  title,
   icon,
   href,
-  isMediumIcon,
 }: {
-  mouseX: MotionValue;
+  mouseX: MotionValue<number>;
   title: string;
   icon: React.ReactNode;
   href: string;
-  isMediumIcon: boolean; // Added flag to check if it's the Medium icon
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
   const distance = useTransform(mouseX, (val) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-
     return val - bounds.x - bounds.width / 2;
   });
 
-  const sizeMultiplier = isMediumIcon ? 1.3 : 1.0; // Slightly enlarge the Medium icon
+  const sizeMultiplier = 1.0;
   const widthTransform = useTransform(
     distance,
     [-150, 0, 150],
@@ -145,12 +106,12 @@ function IconContainer({
     [40 * sizeMultiplier, 80 * sizeMultiplier, 40 * sizeMultiplier]
   );
 
-  const widthTransformIcon = useTransform(
+  const widthIcon = useTransform(
     distance,
     [-150, 0, 150],
     [20 * sizeMultiplier, 40 * sizeMultiplier, 20 * sizeMultiplier]
   );
-  const heightTransformIcon = useTransform(
+  const heightIcon = useTransform(
     distance,
     [-150, 0, 150],
     [20 * sizeMultiplier, 40 * sizeMultiplier, 20 * sizeMultiplier]
@@ -167,18 +128,18 @@ function IconContainer({
     damping: 12,
   });
 
-  const widthIcon = useSpring(widthTransformIcon, {
+  const widthIconSpring = useSpring(widthIcon, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
-  const heightIcon = useSpring(heightTransformIcon, {
+  const heightIconSpring = useSpring(heightIcon, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
 
-  const [hovered, setHovered] = useState(false);
+  const [, setHovered] = useState(false);
 
   return (
     <Link href={href}>
@@ -189,20 +150,8 @@ function IconContainer({
         onMouseLeave={() => setHovered(false)}
         className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
       >
-        <AnimatePresence>
-          {hovered && (
-            <motion.div
-              initial={{ opacity: 0, y: 10, x: "-50%" }}
-              animate={{ opacity: 1, y: 0, x: "-50%" }}
-              exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
-            >
-              {title}
-            </motion.div>
-          )}
-        </AnimatePresence>
         <motion.div
-          style={{ width: widthIcon, height: heightIcon }}
+          style={{ width: widthIconSpring, height: heightIconSpring }}
           className="flex items-center justify-center"
         >
           {icon}

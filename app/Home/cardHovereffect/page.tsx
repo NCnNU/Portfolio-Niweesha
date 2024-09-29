@@ -19,7 +19,7 @@ const CardHoverEffectDemo: React.FC<CardHoverEffectProps> = ({ id }) => {
   return (
     <div id={id} className="max-w-5xl mx-auto px-8 py-12">
       {/* Reduced margin below the title */}
-      <h1 className="text-3xl font-bold text-center mb-10 mt-8">What I Offer</h1>
+      <h1 className="text-3xl font-bold text-center mb-10 mt-8">My Experiences</h1>
       {/* Reduced padding in the card grid */}
       <CardHoverEffect items={projects} />
     </div>
@@ -64,9 +64,9 @@ const projects = [
   },
   {
     icon: <FaWindows size={40} className="text-purple-600 mb-4" />, // Icon for Software and Electronics
-    title2: "Software and Electronics",
+    title2: "Database Management",
     description:
-      "Develops software, consumer electronics, personal computers, and related services.",
+      "Design and manage relational and non-relational databases (e.g., MySQL, MongoDB) for efficient data storage and retrieval.",
     link: "https://microsoft.com",
   },
 ];

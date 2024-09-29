@@ -22,7 +22,7 @@ AppleCardsCarouselDemoProps
   return (
     <div id={id} className="w-full h-full py-20 flex flex-col items-center justify-center">
       {/* Center the title horizontally and vertically */}
-      <h2 className="text-center max-w-7xl mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="text-center max-w-7xl mx-auto text-3xl font-bold ">
         My Publications
       </h2>
       <br/>

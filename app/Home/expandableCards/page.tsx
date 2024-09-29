@@ -2,6 +2,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { FaFilePdf } from "react-icons/fa"; // Importing the PDF icon
 
 interface ExpandableCardProps {
   id: string;
@@ -63,15 +64,18 @@ const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
               className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden spotlight-effect"
             >
               <div className="p-4">
-                <h3 className="font-bold text-neutral-700 dark:text-neutral-200">{active.title}</h3>
-                <p className="text-neutral-600 dark:text-neutral-400">{active.description}</p>
+                <h3 className="font-bold text-neutral-700 dark:text-neutral-200">
+                  {active.title}
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-400">
+                  {active.description}
+                </p>
               </div>
               <div className="pt-4 relative px-4">
                 <a href={active.src} target="_blank" rel="noopener noreferrer">
-                  <motion.div
-                    className="text-neutral-200 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4"
-                  >
+                  <motion.div className="text-neutral-200 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4">
                     {/* Displaying PDF content */}
+                    <FaFilePdf className="text-red-600" /> {/* Adding the PDF icon */}
                     <span>Click to view PDF</span>
                   </motion.div>
                 </a>
@@ -81,11 +85,12 @@ const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
         ) : null}
       </AnimatePresence>
 
-      <div id={id} className="max-w-7xl mx-auto mt-8 flex flex-col items-center relative "style={{ height: '100vh' }}>
+      <div id={id} className="max-w-7xl mx-auto mt-8 flex flex-col items-center relative" style={{ height: "100vh" }}>
         <br />
-        <h2 className="text-3xl font-bold mb-10 mt-20 text-center ">What I Achieved</h2>
-        <br /><br />
-        <div className="flex justify-between items-start w-full">
+        <h2 className="text-3xl font-bold text-center mb-14 mt-14">What I Achieved</h2>
+    
+      
+        <div className="flex justify-between items-start w-full mb-8 md:mb-5 lg:mt-5"> {/* Added margin-bottom here */}
           <div className="flex-1">
             <ul className="space-y-4">
               {achievements.map((card) => (
@@ -99,7 +104,9 @@ const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
                     <h3 className="font-medium text-neutral-800 dark:text-neutral-200 text-center">
                       {card.title}
                     </h3>
-                    <p className="text-neutral-600 dark:text-neutral-400 text-center">{card.description}</p>
+                    <p className="text-neutral-600 dark:text-neutral-400 text-center">
+                      {card.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -121,7 +128,9 @@ const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
                     <h3 className="font-medium text-neutral-800 dark:text-neutral-200 text-center">
                       {card.title}
                     </h3>
-                    <p className="text-neutral-600 dark:text-neutral-400 text-center">{card.description}</p>
+                    <p className="text-neutral-600 dark:text-neutral-400 text-center">
+                      {card.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -133,7 +142,7 @@ const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
   );
 };
 
-export default ExpandableCardDemo;
+
 
 const CloseIcon = () => {
   return (
@@ -196,7 +205,7 @@ const achievements: Card[] = [
 
 const certificates: Card[] = [
   {
-    title: "WEB DEVELOPMENT  I",
+    title: "WEB DEVELOPMENT I",
     description: "University Of Moratuwa | Open Learning Platform",
     src: "/pdf/Web_Design-1.pdf", // Link to the PDF file
     ctaText: "Learn More",
@@ -214,9 +223,11 @@ const certificates: Card[] = [
   {
     title: "PROGRAMMING IN PYTHON I",
     description: "University Of Moratuwa | Open Learning Platform",
-    src: "/public/pdf/Python-1.pdf", // Link to the PDF file
+    src: "/pdf/python-1.pdf", // Link to the PDF file
     ctaText: "Learn More",
     ctaLink: "#",
     content: "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
   },
 ];
+
+export default ExpandableCardDemo;
