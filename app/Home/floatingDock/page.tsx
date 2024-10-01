@@ -53,8 +53,7 @@ const FloatingDockDemo: React.FC<FloatingDockProps> = ({ id }) => {
   ];
 
   return (
-    <div id={id} className="flex items-center justify-center w-full bg-black">
-      {" "}
+    <div id={id} className="flex items-center justify-center w-full bg-black lg:-mt-14 md:-mt-14 sm:-mt-14">
       {/* Background color set to black */}
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production

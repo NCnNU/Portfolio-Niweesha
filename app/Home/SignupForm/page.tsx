@@ -74,8 +74,8 @@ const SignupFormDemo: React.FC<SignupFormProps> = ({ id }) => {
     <div id={id} className="flex items-center justify-center min-h-screen bg-black">
       {/* Reduced the background size of the signup form container */}
       <div className="max-w-lg w-full p-2 md:p-4 rounded-lg shadow-lg">
-        {/* Title in the middle of the page */}
-        <h1 className="font-bold text-3xl text-center mb-8 text-neutral-800 dark:text-neutral-200">
+        {/* Title in the middle of the page */} 
+        <h1 className="font-bold text-3xl text-center md:mt-15 lg:mt-5 sm:-mt-8   lg:mb-8 md:mb-2 sm:mb-8 text-neutral-800 dark:text-neutral-200">
           Get in Touch
         </h1>
 

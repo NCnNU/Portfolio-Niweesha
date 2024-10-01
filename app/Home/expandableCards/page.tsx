@@ -83,9 +83,9 @@ const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
 
       <div id={id} className="max-w-7xl mx-auto mt-8 flex flex-col items-center relative "style={{ height: '100vh' }}>
         <br />
-        <h2 className="text-3xl font-bold mb-10 mt-20 text-center ">What I Achieved</h2>
-        <br /><br />
-        <div className="flex justify-between items-start w-full">
+        <h2 className="text-3xl font-bold lg:mb-10 md:mb-10 sm:mb-10 lg:mt-20 md:mt-14 sm:mt-15 text-center ">What I Achieved</h2>
+        <br /> <br />
+        <div className="flex justify-between items-start w-full md:mb-8">
           <div className="flex-1">
             <ul className="space-y-4">
               {achievements.map((card) => (
