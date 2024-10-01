@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
   AnimatePresence,
   MotionValue,
@@ -10,6 +9,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useRef, useState } from "react";
+
 
 export const FloatingDock = ({
   items,
@@ -35,50 +35,36 @@ const FloatingDockMobile = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
-  const [open, setOpen] = useState(false);
   return (
     <div className={cn("relative block md:hidden", className)}>
-      <AnimatePresence>
-        {open && (
+      <motion.div className="absolute bottom-0 flex gap-4 bg-black p-2"> {/* Changed to flex for horizontal layout */}
+        {items.map((item, idx) => (
           <motion.div
-            layoutId="nav"
-            className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 bg-black" // Changed space between icons to black
+            key={item.title}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: 10,
+              transition: {
+                delay: idx * 0.05,
+              },
+            }}
+            transition={{ delay: (items.length - 1 - idx) * 0.05 }}
           >
-            {items.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
-                }}
-                transition={{ delay: (items.length - 1 - idx) * 0.05 }}
-              >
-                <Link
-                  href={item.href}
-                  key={item.title}
-                  className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
-                >
-                  <div className="h-4 w-4">{item.icon}</div>
-                </Link>
-              </motion.div>
-            ))}
+            <Link
+              href={item.href}
+              key={item.title}
+              className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
+            >
+              <div className="h-4 w-4">{item.icon}</div>
+            </Link>
           </motion.div>
-        )}
-      </AnimatePresence>
-      <button
-        onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
-      >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
-      </button>
+        ))}
+      </motion.div>
     </div>
   );
 };

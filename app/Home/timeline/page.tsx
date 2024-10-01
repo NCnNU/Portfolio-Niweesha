@@ -131,8 +131,7 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
               images={[
                 "/image/5.jpeg",
                 "/image/6.jpeg",
-                "/image/7.jpeg",
-                "/image/8.jpeg",
+              
               ]}
             />
           </CardSpotlight>
