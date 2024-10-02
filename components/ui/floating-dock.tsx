@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
+
 import {
   AnimatePresence,
   MotionValue,
@@ -27,7 +27,6 @@ export const FloatingDock = ({
     </>
   );
 };
-
 const FloatingDockMobile = ({
   items,
   className,
@@ -35,53 +34,46 @@ const FloatingDockMobile = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
-  const [open, setOpen] = useState(false);
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
-        {open && (
-          <motion.div
-            layoutId="nav"
-            className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2 bg-black" // Changed space between icons to black
-          >
-            {items.map((item, idx) => (
-              <motion.div
+        <motion.div
+          layoutId="nav"
+          className="absolute bottom-full mb-2 inset-x-0 flex flex-row gap-4 bg-black px-4 py-3 justify-center items-center" // Ensure proper padding and centering
+        >
+          {items.map((item, idx) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{   
+                opacity: 0,
+                y: 10,
+                transition: {
+                  delay: idx * 0.05,
+                },
+              }}
+              transition={{ delay: (items.length - 1 - idx) * 0.05 }}
+              className="flex items-center justify-center"
+            >
+              <Link
+                href={item.href}
                 key={item.title}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
-                }}
-                transition={{ delay: (items.length - 1 - idx) * 0.05 }}
+                className="h-12 w-12 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center" // Increase h/w to match the circle
               >
-                <Link
-                  href={item.href}
-                  key={item.title}
-                  className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
-                >
-                  <div className="h-4 w-4">{item.icon}</div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
+                <div className="h-6 w-6 flex items-center justify-center">{item.icon}</div> {/* Larger icon for better visibility */}
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
       </AnimatePresence>
-      <button
-        onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center"
-      >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
-      </button>
     </div>
   );
 };
+
 
 const FloatingDockDesktop = ({
   items,

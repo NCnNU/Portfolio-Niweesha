@@ -24,22 +24,24 @@ const iconMap = {
 
 interface MenuProps {
   setActive: (item: string) => void;
+  className?: string; // Add className as an optional prop
 }
 
 interface MenuItemProps {
   active?: string | null;
   icon: string; // Icon name passed as a prop
   onClick: () => void; // Handle click to navigate to section
+  className?: string; // Add className as an optional prop
 }
 
-export function Menu({ children }: React.PropsWithChildren<MenuProps>) {
-  return <ul className="flex justify-around space-x-4">{children}</ul>; // Adjust spacing and layout
+export function Menu({ children, className }: React.PropsWithChildren<MenuProps>) {
+  return <ul className={`flex justify-around space-x-4 ${className}`}>{children}</ul>; // Include className
 }
 
-export function MenuItem({ icon, onClick }: MenuItemProps) {
+export function MenuItem({ icon, onClick, className }: MenuItemProps) {
   return (
     <li
-      className="relative flex items-center space-x-2 px-4 py-2 cursor-pointer transition duration-200 hover:text-gray-400 transform hover:scale-125"
+      className={`relative flex items-center space-x-2 px-4 py-2 cursor-pointer transition duration-200 hover:text-gray-400 transform hover:scale-125 ${className}`} // Include className
       onClick={onClick} // Handle click
     >
       <FontAwesomeIcon

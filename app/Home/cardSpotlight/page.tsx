@@ -120,7 +120,7 @@ const SkillRectangle = ({
     // Apply a larger z-index for the icon rectangles
     <div className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300 ease-in-out relative z-20">
       <div className="mr-4 text-white">{icon}</div>
-      <p className="text-white">{name}</p>
+      <p className="text-white sm:text-sm">{name}</p>
     </div>
   );
 };
