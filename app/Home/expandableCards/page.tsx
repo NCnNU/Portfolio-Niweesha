@@ -3,11 +3,8 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
-interface ExpandableCardProps {
-  id: string;
-}
 
-const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
+const ExpandableCardDemo: React.FC = () => {
   const [active, setActive] = useState<Card | boolean | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const ids = useId();
@@ -81,7 +78,7 @@ const ExpandableCardDemo: React.FC<ExpandableCardProps> = ({ id }) => {
         ) : null}
       </AnimatePresence>
 
-      <div id={id} className="max-w-7xl mx-auto mt-8 flex flex-col items-center relative "style={{ height: '100vh' }}>
+      <div  className="max-w-7xl mx-auto mt-8 flex flex-col items-center relative "style={{ height: '100vh' }}>
         <br />
         <h2 className="text-3xl font-bold mb-10 mt-20 text-center ">What I Achieved</h2>
         <br /><br />

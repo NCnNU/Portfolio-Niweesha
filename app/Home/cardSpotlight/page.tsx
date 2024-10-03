@@ -21,14 +21,12 @@ import {
 } from "react-icons/si"; // Other relevant icons
 import { Key } from "react";
 
-interface CardSpotlightDemoProps {
-  id: string;
-}
 
-const CardSpotlightDemo: React.FC<CardSpotlightDemoProps> = ({ id }) => {
+
+const CardSpotlightDemo: React.FC = () => {
   return (
     // Added 'min-h-screen' to ensure full page height
-    <div id={id} className="min-h-screen max-w-6xl mx-auto px-8 py-12">
+    <div  className="min-h-screen max-w-6xl mx-auto px-8 py-12">
       <br />
       <h1 className="text-3xl font-bold text-center mb-12">My Technical Skills</h1>
       <br />

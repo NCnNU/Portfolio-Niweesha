@@ -4,11 +4,9 @@ import React, { useState, useEffect } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import Image from "next/image";
 
-interface TimelineDemoProps {
-  id: string;
-}
 
-const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
+
+const TimelineDemo: React.FC = () => {
   // Data for timeline
   const data = [
     {
@@ -157,7 +155,7 @@ const TimelineDemo: React.FC<TimelineDemoProps> = ({ id }) => {
   ];
 
   return (
-    <div id={id} className="w-full">
+    <div  className="w-full">
       <Timeline data={data} />
     </div>
   );

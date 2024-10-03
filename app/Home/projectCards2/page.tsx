@@ -5,13 +5,9 @@ import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import Link from "next/link";
 
-interface AppleCardsCarouselDemoProps {
-  id: string;
-}
 
-const AppleCardsCarouselDemo: React.FC<
-AppleCardsCarouselDemoProps
-> = ({ id }) => {
+
+const AppleCardsCarouselDemo: React.FC = () => {
   // Corrected 'key' to use 'index' instead of 'card.src'
   const cards = data.map((card, index) => (
     <Link href={card.link} key={index} target="_blank" rel="noopener noreferrer">
@@ -20,7 +16,7 @@ AppleCardsCarouselDemoProps
   ));
 
   return (
-    <div id={id} className="w-full h-full py-20 flex flex-col items-center justify-center">
+    <div className="w-full h-full py-20 flex flex-col items-center justify-center">
       {/* Center the title horizontally and vertically */}
       <h2 className="text-center max-w-7xl mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         My Publications

@@ -11,13 +11,11 @@ import {
   FaWindows,
 } from "react-icons/fa"; // Importing icons
 
-interface CardHoverEffectProps {
-  id: string;
-}
 
-const CardHoverEffectDemo: React.FC<CardHoverEffectProps> = ({ id }) => {
+
+const CardHoverEffectDemo: React.FC= () => {
   return (
-    <div id={id} className="max-w-5xl mx-auto px-8 py-12">
+    <div  className="max-w-5xl mx-auto px-8 py-12">
       {/* Reduced margin below the title */}
       <h1 className="text-3xl font-bold text-center mb-10 mt-8">What I Offer</h1>
       {/* Reduced padding in the card grid */}

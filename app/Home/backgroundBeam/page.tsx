@@ -2,15 +2,12 @@
 import React from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
-interface BackgroundBeamsWithCollisionProps {
-  id: string;
-}
 
-const BackgroundBeamsWithCollisionDemo: React.FC<BackgroundBeamsWithCollisionProps> = ({ id }) => {
+const BackgroundBeamsWithCollisionDemo: React.FC = () => {
   return (
     <BackgroundBeamsWithCollision>
       <div
-        id={id}
+        // id={id}
         className="flex flex-col md:flex-row items-center md:justify-between w-full p-4 space-y-4 md:space-y-0 md:space-x-4"
       >
         {/* Left side: Enlarged image without any background */}

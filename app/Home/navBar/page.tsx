@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Menu, MenuItem } from "../../../components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 
-export function NavbarDemo() {
+const NavbarDemo: React.FC = () => {
   return (
     <div className="relative w-full flex items-center justify-center">
       {/* Navbar with increased width */}
@@ -11,6 +11,7 @@ export function NavbarDemo() {
     </div>
   );
 }
+export default NavbarDemo;
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
