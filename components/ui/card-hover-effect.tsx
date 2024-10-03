@@ -1,9 +1,11 @@
+
 import { cn } from "@/lib/utils"; // Ensure this utility is correctly imported
+
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
-// Define the interface for the items
+
 interface Item {
   icon: JSX.Element;
   title2: string;
@@ -22,7 +24,9 @@ const HoverEffect = ({ items, className }: HoverEffectProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
+
     <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10", className)}>
+
       {items.map((item, idx) => (
         <Link
           href={item.link}
@@ -78,20 +82,24 @@ const Card = ({ className, children }: { className?: string; children: React.Rea
 // Define the CardTitle component
 const CardTitle = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-2", className)}>
       {children}
     </h4>
   );
 };
 
+
 // Define the CardDescription component
 const CardDescription = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
     <p className={cn("mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm", className)}>
+
       {children}
     </p>
   );
 };
 
+
 // Export HoverEffect as the default export
 export default HoverEffect;
+

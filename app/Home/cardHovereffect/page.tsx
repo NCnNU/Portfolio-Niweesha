@@ -11,10 +11,14 @@ import {
   FaWindows,
 } from "react-icons/fa"; // Importing icons
 
-export default function CardHoverEffectDemo() {
+
+
+const CardHoverEffectDemo: React.FC= () => {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-12">
-      <h1 className="text-3xl font-bold text-center mb-8">What I Offer</h1>
+    <div  className="max-w-5xl mx-auto px-8 py-12">
+      {/* Reduced margin below the title */}
+      <h1 className="text-3xl font-bold text-center mb-10 mt-8">What I Offer</h1>
+      {/* Reduced padding in the card grid */}
       <CardHoverEffect items={projects} />
     </div>
   );
@@ -65,4 +69,4 @@ const projects = [
   },
 ];
 
-// Center the card content using Tailwind CSS
+export default CardHoverEffectDemo;

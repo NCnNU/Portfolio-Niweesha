@@ -9,7 +9,7 @@ import {
   IconCode,
 } from "@tabler/icons-react"; // Import the correct icons for each link
 
-const FloatingDockDemo = () => {
+const FloatingDockDemo: React.FC = () => {
   const links = [
     {
       title: "Home",

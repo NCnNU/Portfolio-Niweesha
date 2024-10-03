@@ -21,10 +21,15 @@ import {
 } from "react-icons/si"; // Other relevant icons
 import { Key } from "react";
 
-const CardSpotlightDemo = () => {
+
+
+const CardSpotlightDemo: React.FC = () => {
   return (
-    <div className="max-w-6xl mx-auto px-8 py-12">
-      <h1 className="text-3xl font-bold text-center mb-12">My Skills</h1>
+    // Added 'min-h-screen' to ensure full page height
+    <div  className="min-h-screen max-w-6xl mx-auto px-8 py-12">
+      <br />
+      <h1 className="text-3xl font-bold text-center mb-12">My Technical Skills</h1>
+      <br />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <SpotlightCard
           title="Programming Languages"
@@ -89,8 +94,8 @@ const SpotlightCard = ({
   return (
     <CardSpotlight className="h-70 w-full p-6">
       {" "}
-      {/* Reduced height */}
-      <p className="text-xl font-bold relative z-20 mt-2 text-white text-center">
+      {/* Apply a smaller z-index for the spotlight title */}
+      <p className="text-xl font-bold relative z-10 mt-2 text-white text-center">
         {title}
       </p>
       <div className="grid grid-cols-2 gap-4 mt-6">
@@ -110,9 +115,10 @@ const SkillRectangle = ({
   name: string;
 }) => {
   return (
-    <div className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300 ease-in-out">
+    // Apply a larger z-index for the icon rectangles
+    <div className="flex items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300 ease-in-out relative z-20">
       <div className="mr-4 text-white">{icon}</div>
-      <p className="text-white">{name}</p>
+      <p className="text-white sm:text-sm">{name}</p>
     </div>
   );
 };
