@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 
 
-const SignupFormDemo: React.FC = () => {
+const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -69,7 +69,7 @@ const SignupFormDemo: React.FC = () => {
   };
 
   return (
-    <div  className="flex items-center justify-center min-h-screen bg-black">
+    <div id="contact-me"  className="flex items-center justify-center min-h-screen bg-black">
       {/* Reduced the background size of the signup form container */}
       <div className="max-w-lg w-full p-2 md:p-4 rounded-lg shadow-lg">
         {/* Title in the middle of the page */}
@@ -167,4 +167,4 @@ const LabelInputContainer = ({
   );
 };
 
-export default SignupFormDemo;
+export default Contact;

@@ -6,13 +6,13 @@ import Image from "next/image";
 
 
 
-const TimelineDemo: React.FC = () => {
+const Projects: React.FC = () => {
   // Data for timeline
   const data = [
     {
       title: "2024",
       content: (
-        <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
+        <div  className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
           {/* Left Card */}
           <CardSpotlight className="h-80 w-full lg:w-1/2">
             <p className="text-base font-bold relative z-20 mt-2 text-white">
@@ -189,4 +189,4 @@ export function ImageSliderCard({ images }: { images: string[] }) {
   );
 }
 
-export default TimelineDemo;
+export default Projects;

@@ -9,7 +9,7 @@ import {
   IconCode,
 } from "@tabler/icons-react"; // Import the correct icons for each link
 
-const FloatingDockDemo: React.FC = () => {
+const Social: React.FC = () => {
   const links = [
     {
       title: "Home",
@@ -49,7 +49,7 @@ const FloatingDockDemo: React.FC = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center w-full bg-black">
+    <div id="Links" className="flex items-center justify-center w-full bg-black">
       {" "}
       {/* Background color set to black */}
       <FloatingDock
@@ -60,4 +60,4 @@ const FloatingDockDemo: React.FC = () => {
   );
 };
 
-export default FloatingDockDemo;
+export default Social;

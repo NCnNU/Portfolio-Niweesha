@@ -23,10 +23,10 @@ import { Key } from "react";
 
 
 
-const CardSpotlightDemo: React.FC = () => {
+const Teach: React.FC = () => {
   return (
     // Added 'min-h-screen' to ensure full page height
-    <div  className="min-h-screen max-w-6xl mx-auto px-8 py-12">
+    <div id="cardSpotlight"  className="min-h-screen max-w-6xl mx-auto px-8 py-12">
       <br />
       <h1 className="text-3xl font-bold text-center mb-12">My Technical Skills</h1>
       <br />
@@ -123,4 +123,4 @@ const SkillRectangle = ({
   );
 };
 
-export default CardSpotlightDemo;
+export default Teach;

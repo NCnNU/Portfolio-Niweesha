@@ -7,7 +7,7 @@ import Link from "next/link";
 
 
 
-const AppleCardsCarouselDemo: React.FC = () => {
+const Publications: React.FC = () => {
   // Corrected 'key' to use 'index' instead of 'card.src'
   const cards = data.map((card, index) => (
     <Link href={card.link} key={index} target="_blank" rel="noopener noreferrer">
@@ -16,7 +16,7 @@ const AppleCardsCarouselDemo: React.FC = () => {
   ));
 
   return (
-    <div className="w-full h-full py-20 flex flex-col items-center justify-center">
+    <div id="my-publications" className="w-full h-full py-20 flex flex-col items-center justify-center">
       {/* Center the title horizontally and vertically */}
       <h2 className="text-center max-w-7xl mx-auto text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         My Publications
@@ -114,4 +114,4 @@ const data = [
   },
 ];
 
-export default AppleCardsCarouselDemo;
+export default Publications;
