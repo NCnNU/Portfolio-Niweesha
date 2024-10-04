@@ -1,25 +1,24 @@
-import CardSpotlightDemo from "./Home/cardSpotlight/page";
-import ExpandableCardDemo from "./Home/expandableCards/page";
-import CardHoverEffectDemo from "./Home/cardHovereffect/page";
-
-import AppleCardsCarouselDemo from "./Home/projectCards2/page";
-import TimelineDemo from "./Home/timeline/page";
-import SignupFormDemo from "./Home/SignupForm/page";
-import FloatingDockDemo from "./Home/floatingDock/page";
-import BackgroundBeamsWithCollisionDemo from "./Home/backgroundBeam/page";
-import  NavbarDemo  from "./Home/navBar/page";
+import NavbarDemo from "./homee/navBar/page";
+import Hero from "./homee/backgroundBe/page";
+import Teach from "./homee/cardSpotlight/page";
+import Projects from "./homee/timeline/page";
+import Offer from "./homee/cardHovereffect/page";
+import Publications from "./homee/projectCards2/page";
+import Achive from "./homee/expandableCards/page";
+import Contact from "./homee/SignupForm/page";
+import Social from "./homee/floatingDock/page";
 export default function Home() {
   return (
     <>
       <NavbarDemo />
-      <BackgroundBeamsWithCollisionDemo />
-      <CardSpotlightDemo  />
-      <TimelineDemo />
-      <CardHoverEffectDemo  />
-      <AppleCardsCarouselDemo  />
-      <ExpandableCardDemo  />
-      <SignupFormDemo  />
-      <FloatingDockDemo />
+      <Hero />
+      <Teach />
+      <Projects />
+      <Offer />
+      <Publications />
+      <Achive />
+      <Contact />
+      <Social />
     </>
   );
 }

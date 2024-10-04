@@ -15,7 +15,7 @@ import {
 
 const CardHoverEffectDemo: React.FC= () => {
   return (
-    <div  className="max-w-5xl mx-auto px-8 py-12">
+    <div id="what-i-offer"  className="max-w-5xl mx-auto px-8 py-12">
       {/* Reduced margin below the title */}
       <h1 className="text-3xl font-bold text-center mb-10 mt-8">What I Offer</h1>
       {/* Reduced padding in the card grid */}

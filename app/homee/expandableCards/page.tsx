@@ -3,8 +3,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
-
-const ExpandableCardDemo: React.FC = () => {
+const Achive: React.FC = () => {
   const [active, setActive] = useState<Card | boolean | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const ids = useId();
@@ -60,14 +59,16 @@ const ExpandableCardDemo: React.FC = () => {
               className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden spotlight-effect"
             >
               <div className="p-4">
-                <h3 className="font-bold text-neutral-700 dark:text-neutral-200">{active.title}</h3>
-                <p className="text-neutral-600 dark:text-neutral-400">{active.description}</p>
+                <h3 className="font-bold text-neutral-700 dark:text-neutral-200">
+                  {active.title}
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-400">
+                  {active.description}
+                </p>
               </div>
               <div className="pt-4 relative px-4">
                 <a href={active.src} target="_blank" rel="noopener noreferrer">
-                  <motion.div
-                    className="text-neutral-200 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4"
-                  >
+                  <motion.div className="text-neutral-200 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4">
                     {/* Displaying PDF content */}
                     <span>Click to view PDF</span>
                   </motion.div>
@@ -78,10 +79,17 @@ const ExpandableCardDemo: React.FC = () => {
         ) : null}
       </AnimatePresence>
 
-      <div  className="max-w-7xl mx-auto mt-8 flex flex-col items-center relative "style={{ height: '100vh' }}>
+      <div
+        id="achievements-certifications"
+        className="max-w-7xl mx-auto mt-8 flex flex-col items-center relative  "
+      
+      >
         <br />
-        <h2 className="text-3xl font-bold mb-10 mt-20 text-center ">What I Achieved</h2>
-        <br /><br />
+        <h2 className="text-3xl font-bold mb-10 mt-20 text-center ">
+          What I Achived
+        </h2>
+        <br />
+        <br />
         <div className="flex justify-between items-start w-full">
           <div className="flex-1">
             <ul className="space-y-4">
@@ -96,7 +104,9 @@ const ExpandableCardDemo: React.FC = () => {
                     <h3 className="font-medium text-neutral-800 dark:text-neutral-200 text-center">
                       {card.title}
                     </h3>
-                    <p className="text-neutral-600 dark:text-neutral-400 text-center">{card.description}</p>
+                    <p className="text-neutral-600 dark:text-neutral-400 text-center">
+                      {card.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -118,7 +128,9 @@ const ExpandableCardDemo: React.FC = () => {
                     <h3 className="font-medium text-neutral-800 dark:text-neutral-200 text-center">
                       {card.title}
                     </h3>
-                    <p className="text-neutral-600 dark:text-neutral-400 text-center">{card.description}</p>
+                    <p className="text-neutral-600 dark:text-neutral-400 text-center">
+                      {card.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -130,7 +142,7 @@ const ExpandableCardDemo: React.FC = () => {
   );
 };
 
-export default ExpandableCardDemo;
+export default Achive;
 
 const CloseIcon = () => {
   return (
@@ -171,7 +183,8 @@ const achievements: Card[] = [
     src: "/pdf/Hackmora.pdf", // Link to the PDF file
     ctaText: "Learn More",
     ctaLink: "#",
-    content: "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
+    content:
+      "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
   },
   {
     title: "CODERUSH 2023 - 12TH PLACE",
@@ -179,7 +192,8 @@ const achievements: Card[] = [
     src: "/pdf/coderush-2023.pdf", // Link to the PDF file
     ctaText: "Learn More",
     ctaLink: "#",
-    content: "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
+    content:
+      "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
   },
   {
     title: "CODERUSH 2022 - 27TH PLACE",
@@ -187,7 +201,8 @@ const achievements: Card[] = [
     src: "/pdf/coderush-2023.pdf", // Link to the PDF file
     ctaText: "Learn More",
     ctaLink: "#",
-    content: "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
+    content:
+      "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
   },
 ];
 
@@ -198,7 +213,8 @@ const certificates: Card[] = [
     src: "/pdf/Web_Design-1.pdf", // Link to the PDF file
     ctaText: "Learn More",
     ctaLink: "#",
-    content: "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
+    content:
+      "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
   },
   {
     title: "WEB DEVELOPMENT II",
@@ -206,7 +222,8 @@ const certificates: Card[] = [
     src: "/pdf/Web Development - 2.pdf", // Link to the PDF file
     ctaText: "Learn More",
     ctaLink: "#",
-    content: "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
+    content:
+      "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
   },
   {
     title: "PROGRAMMING IN PYTHON I",
@@ -214,6 +231,7 @@ const certificates: Card[] = [
     src: "/public/pdf/Python-1.pdf", // Link to the PDF file
     ctaText: "Learn More",
     ctaLink: "#",
-    content: "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
+    content:
+      "For a comprehensive overview of my professional experience and achievements, please visit my LinkedIn profile.",
   },
 ];

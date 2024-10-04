@@ -1,9 +1,5 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 interface TimelineEntry {
   title: string;
@@ -32,10 +28,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
+      id="project"
       className="w-full bg-white dark:bg-neutral-950 font-sans px-4 md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-10 md:py-20">
+      <div className="max-w-7xl mx-auto py-10 md:py-0">
         <h2 className="text-center text-xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
           My Projects
         </h2>
