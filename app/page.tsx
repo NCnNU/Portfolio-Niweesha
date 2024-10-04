@@ -1,12 +1,12 @@
-import NavbarDemo from "./home/navBar/page";
-import Hero from "./home/backgroundBe/page";
-import Teach from "./home/cardSpotlight/page";
-import Projects from "./home/timeline/page";
-import Offer from "./home/cardHovereffect/page";
-import Publications from "./home/projectCards2/page";
-import Achive from "./home/expandableCards/page";
-import Contact from "./home/SignupForm/page";
-import Social from "./home/floatingDock/page";
+import NavbarDemo from "./homee/navBar/page";
+import Hero from "./homee/backgroundBe/page";
+import Teach from "./homee/cardSpotlight/page";
+import Projects from "./homee/timeline/page";
+import Offer from "./homee/cardHovereffect/page";
+import Publications from "./homee/projectCards2/page";
+import Achive from "./homee/expandableCards/page";
+import Contact from "./homee/SignupForm/page";
+import Social from "./homee/floatingDock/page";
 export default function Home() {
   return (
     <>
